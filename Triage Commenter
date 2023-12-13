@@ -1,9 +1,8 @@
 import re
-import pyperclip
-from tkinter import *
+import pyperclip as pyper
 
 
-def validate_input(input_string):
+def validate_input(input_string: object) -> object:
     url_pattern = r'http(s)\:\/\/\w+(.)\w+(.)+\w+\b'
     ip_pattern = r'\b(?:\d{1,3}\.){3}\d{1,3}\b'
     port_pattern = r'(:)\d+\b'
@@ -17,5 +16,4 @@ def validate_input(input_string):
 
 
 userInput = input("Enter your Triage Comment: ")
-validated = validate_input(userInput)
-print(validated)
+pyper.copy(validate_input(userInput))
